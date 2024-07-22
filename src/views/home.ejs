@@ -1,0 +1,596 @@
+<!doctype html>
+<html class="h-100" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.0">
+  <meta name="HandheldFriendly" content="true">
+  <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+  <title>Homepage | Coinify</title>
+  <link rel="stylesheet" href="./css/theme.min.css">
+
+  <style>
+
+        .loader {
+      --path: #2F3545;
+      --dot: #5628EE;
+      --duration: 3s;
+      width: 44px;
+      height: 44px;
+      position: relative;
+    }
+    .loader:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      background: var(--dot);
+      top: 37px;
+      left: 19px;
+      transform: translate(-18px, -18px);
+      animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    }
+    .loader svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .loader rect,
+    .loader polygon,
+    .loader circle {
+      fill: none;
+      stroke: var(--path);
+      stroke-width: 10px;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .loader polygon {
+      stroke-dasharray: 145 76 145 76;
+      stroke-dashoffset: 0;
+      animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    }
+    .loader rect {
+      stroke-dasharray: 192 64 192 64;
+      stroke-dashoffset: 0;
+      animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    }
+    .loader circle {
+      stroke-dasharray: 150 50 150 50;
+      stroke-dashoffset: 75;
+      animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    }
+    .loader.triangle {
+      width: 48px;
+    }
+    .loader.triangle:before {
+      left: 21px;
+      transform: translate(-10px, -18px);
+      animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+    }
+    @keyframes pathTriangle {
+      33% { stroke-dashoffset: 74; }
+      66% { stroke-dashoffset: 147; }
+      100% { stroke-dashoffset: 221; }
+    }
+    @keyframes dotTriangle {
+      33% { transform: translate(0, 0); }
+      66% { transform: translate(10px, -18px); }
+      100% { transform: translate(-10px, -18px); }
+    }
+    @keyframes pathRect {
+      25% { stroke-dashoffset: 64; }
+      50% { stroke-dashoffset: 128; }
+      75% { stroke-dashoffset: 192; }
+      100% { stroke-dashoffset: 256; }
+    }
+    @keyframes dotRect {
+      25% { transform: translate(0, 0); }
+      50% { transform: translate(18px, -18px); }
+      75% { transform: translate(0, -36px); }
+      100% { transform: translate(-18px, -18px); }
+    }
+    @keyframes pathCircle {
+      25% { stroke-dashoffset: 125; }
+      50% { stroke-dashoffset: 175; }
+      75% { stroke-dashoffset: 225; }
+      100% { stroke-dashoffset: 275; }
+    }
+    .loader {
+      display: inline-block;
+      margin: 0 16px;
+    }
+    html {
+      -webkit-font-smoothing: antialiased;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    *:before, *:after {
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      background: #F5F9FF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .dribbble {
+      position: fixed;
+      display: block;
+      right: 20px;
+      bottom: 20px;
+    }
+    .dribbble img {
+      display: block;
+      height: 28px;
+    }
+
+    /* inter-300 - latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-300.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-300.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* inter-400 - latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-regular.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-500.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-500.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-700.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    #page-content {
+      display: none;
+    }
+  </style>
+
+
+</head>
+
+<body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+
+   <div id="loading">
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+      <circle id="test" cx="40" cy="40" r="32"></circle>
+    </svg>
+  </div>
+
+  <div class="loader triangle">
+    <svg viewBox="0 0 86 80">
+      <polygon points="43 8 79 72 7 72"></polygon>
+    </svg>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 80 80">
+      <rect x="8" y="8" width="64" height="64"></rect>
+    </svg>
+  </div>
+
+  <!-- dribbble -->
+  <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank">
+    <img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt="">
+  </a>
+</div>
+
+<div id="page-content">
+
+  <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
+    <div class="container">
+      <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+        <img src="img/logo.png" width="200" height="95" fill="currentColor" class="bi bi-stack"
+          viewBox="0 0 16 16">
+          <path
+            d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
+          <path
+            d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
+        </svg>
+        
+      </a>
+
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="/login" aria-label="A sample content page">
+            Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="/dashboard" aria-label="A system message page">
+            Dashboard
+          </a>
+        </li>
+
+      </ul>
+      <a href="/register" aria-label="Download this template"
+        class="btn btn-outline-light">
+        <small>Faça já seu cadastro</small>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
+      <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
+      <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
+        <div class="row d-flex align-items-center justify-content-center py-vh-5">
+          <div class="col-12 col-xl-10">
+            <span class="h5 text-secondary fw-lighter">VOCÊ MESMO!</span>
+            <h1 class="display-huge mt-3 mb-3 lh-1">Bem-vindo a Coinify!</h1>
+          </div>
+          <div class="col-12 col-xl-8">
+            <p class="lead text-secondary">Sua porta de entrada para investimentos inteligentes em criptomoedas. Descubra estratégias, dicas e análises para maximizar seus ganhos no mercado digital.</p>
+          </div>
+          <div class="col-12 text-center">
+            <a href="#" class="btn btn-xl btn-light">Construa seu novo futuro
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
+      <div class="container-fluid px-vw-5">
+        <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
+        <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
+          <div class="col-12 col-lg-6">
+            <img src="img/bit.png" width="2280" height="1732" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <img src="img/relogio.jpg" width="1116" height="1578" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <img src="img/oculos.png" width="1116" height="848" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark">
+      <div class="container px-vw-5 py-vh-5">
+        <div class="row d-flex align-items-center">
+          <div class="col-12 col-lg-7 text-lg-end" data-aos="fade-right">
+            <span class="h5 text-secondary fw-lighter">Objetivo</span>
+            <h2 class="display-4">A Coinify tem como objetivos principais disponibilizar educação financeira sobre criptomoedas e facilitar o acesso ao mercado desses ativos. </h2>
+          </div>
+          <div class="col-12 col-lg-5" data-aos="fade-left">
+            <h3 class="pt-5">Impactos Sociais das Criptomoedas</h3>
+            <p class="text-secondary">Analisar e divulgar os efeitos sociais e econômicos das criptomoedas..<br>
+              <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+              </svg>
+            </p>
+            <h3 class="border-top border-secondary pt-5 mt-5">Sistema de Compra e Venda Intuitivo</h3>
+            <p class="text-secondary">Desenvolver uma plataforma fácil de usar para transações de criptomoedas.<br>
+              <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-black py-vh-3">
+      <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
+
+        <div class="row gx-5">
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <img src="img/coringa.jpg" width="782" height="527" alt="abstract image"
+                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+                <div class="p-5">
+                  <h2 class="fw-lighter">Invista com confiança!</h2>
+                  <p class="pb-4 text-secondary">Criptomoedas são uma inovação financeira, não um golpe. Com a estratégia certa e informações corretas, você pode aproveitar as oportunidades deste mercado emergente.</p>
+                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card bg-transparent" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <img src="img/maquina.jpg" width="782" height="642" alt="abstract image"
+                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+                <div class="p-5">
+                  <h2 class="fw-lighter">NÃO PERCA!</h2>
+                  <p class="pb-4 text-secondary">Vamos criar uma estratégia personalizada para o seu negócio e transformar seu potencial em lucros significativos. Junte-se a nós e veja seu empreendimento prosperar!</p>
+                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="p-5 pt-0 mt-5" data-aos="fade">
+              <span class="h5 text-secondary fw-lighter">Fique atento</span>
+              <h2 class="display-4">Blogs que mudarão seu jeito de investir seu dinheiro.</h2>
+            </div>
+            <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <img src="img/porco.jpg" width="782" height="590" alt="abstract image"
+                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+                <div class="p-5">
+                  <h2 class="fw-lighter">Você pode começar pequeno e ainda assim alcançar grandes resultados!</h2>
+                  <p class="pb-4 text-secondary">Investir em criptomoedas com pouco dinheiro é possível e pode ser muito lucrativo com as estratégias certas.</p>
+                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card bg-transparent" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <img src="img/insights.jpg" width="782" height="527" alt="abstract image"
+                  class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
+                <div class="p-5">
+                  <h2 class="fw-lighter">Transforme insights em lucro!</h2>
+                  <p class="pb-4 text-secondary">Utilize nossas análises e dicas especializadas para aumentar seus ganhos e fazer seu dinheiro trabalhar para você.</p>
+                  <a href="#" class="link-fancy link-fancy-light">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="bg-black">
+      <div class="container px-vw-5 py-vh-5">
+        <div class="row d-flex align-items-center">
+          <div class="col-12 col-lg-5 text-center text-lg-end" data-aos="zoom-in-right">
+            <span class="h5 text-secondary fw-lighter">Quanto isso te custa?</span>
+            <h2 class="display-4">Você obtém todo o nosso conhecimento por um preço simples</h2>
+          </div>
+          <div class="col-12 col-lg-7 bg-dark rounded-5 py-vh-3 text-center my-5" data-aos="zoom-in-up">
+            <h2 class="display-huge mb-5">
+              <span class="fs-4 me-2 fw-light">$</span><span class="border-bottom border-5">FREE</span><span
+                class="fs-6 fw-light">/mensal</span>
+            </h2>
+            <p class="lead text-secondary">Não perca a oportunidade de entender o universo das criptomoedas com a Conify! Educação financeira, acesso simplificado ao mercado e uma experiência intuitiva de compra e venda esperam por você.</p>
+            <a href="#" class="btn btn-xl btn-light">Sign up
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container-fluid px-vw-5 position-relative" data-aos="fade">
+      <div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
+      <div class="position-relative py-vh-5 bg-cover bg-center rounded-5"
+        style="background-image: url(img/bg.jpg)">
+        <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
+          <div class="row d-flex align-items-center">
+
+            <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
+              <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                  <img src="img/equipe.jpg" width="684" height="457" alt="our CEO with some nice numbers"
+                    class="img-fluid rounded-5" loading="lazy">
+                </div>
+                <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
+                  <p class="lead border-bottom pb-4 border-secondary">"
+                    Somos uma equipe profissional e apaixonada pela tecnologia financeira e criptomoedas. Nossos especialistas em desenvolvimento web, design de interface, análise de mercado e educação financeira uniram forças para criar um site intuitivo, informativo e seguro. Estamos comprometidos em oferecer uma experiência excepcional, capacitando as pessoas a entender e aproveitar ao máximo o potencial das criptomoedas. Estamos ansiosos para compartilhar nosso trabalho em breve!"</p>
+                  <p class="text-secondary text-center">Matheus, Luis e João | CEO's</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 offset-1">
+              <span class="h5 text-secondary fw-lighter">Mais de</span>
+              <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">+400</h2>
+              <p class="h4 fw-lighter text-secondary">
+                Transações feitas.
+              </p>
+
+              <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">3.980
+              </h2>
+              <p class="h4 fw-lighter text-secondary">
+                Úsuarios satisfeitos.
+              </p>
+              <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">98%</h2>
+              <p class="h4 fw-lighter text-secondary">
+                De aprovação via viezes cognitivos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+   
+
+  <footer class="bg-black border-top border-dark">
+    <div class="container py-vh-4 text-secondary fw-lighter">
+      <div class="row">
+        <div class="col-12 col-lg-5 py-4 text-center text-lg-start">
+          <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+            <img src="img/logo.png" width="200" height="95" fill="currentColor" class="bi bi-stack"
+              viewBox="0 0 16 16">
+              <path
+                d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
+              <path
+                d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
+          </img>
+
+          </a>
+
+        </div>
+        <div class="col border-end border-dark">
+          <span class="h6">Company</span>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">About us</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Legal</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Career</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col border-end border-dark">
+          <span class="h6">Services</span>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Products</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Customers</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Success Stories</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">More</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <span class="h6">Support</span>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">About us</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Legal</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Career</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="link-fancy link-fancy-light">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center small py-vh-2 border-top border-dark">Made by Coinify</a>
+     
+    </div>
+  </footer>
+</div>
+
+
+
+
+
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // values from 0 to 3000, with step 50ms
+    });
+  </script>
+  <script>
+    let scrollpos = window.scrollY;
+    const header = document.querySelector(".navbar");
+    const header_height = header.offsetHeight;
+
+    const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm");
+    const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm");
+
+    window.addEventListener('scroll', function () {
+      scrollpos = window.scrollY;
+
+      if (scrollpos >= header_height) { add_class_on_scroll(); }
+      else { remove_class_on_scroll(); }
+
+      console.log(scrollpos);
+    })
+
+    window.onload = function(){
+     document.getElementById("loading").style.display = "none" 
+     document.getElementById("page-content").style.display = "flex" 
+   }
+  </script>
+
+</body>
+
+</html>
