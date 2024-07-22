@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Coinify</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style></style>
+  </head>
+  <body>
+    <h1>Olá, <span id="usernameText"></span></h1>
+    <button onclick="deleteCookie('token')">Sair</button>
+  </body>
+  <script>
+    var usernameText = document.getElementById("usernameText");
+    fetch("api/auth", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        usernameText.innerHTML = data.data.name;
+      });
+
+    function deleteCookie(name) {
+      document.cookie =
+        name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+  </script>
+</html>
