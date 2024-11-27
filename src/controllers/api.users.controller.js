@@ -16,7 +16,7 @@ let UsersController = {
         isAdmin: false
       });
       User.save().then(() => {
-        res.status(201).send({ message: "Account registered successfully" });
+        res.status(201).send({ message: "conta registrada" });
       });
     } else {
       res.status(400).send({errors: errors})

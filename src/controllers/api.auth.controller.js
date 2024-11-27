@@ -28,7 +28,7 @@ let AuthController = {
                 sameSite: "none",
                 secure: true,
               })
-              .send({ message: "Logged in successfully" });
+              .send({ message: "Logado" });
           } else {
             res.status(400).send({error: "Senha incorreta"})
           }
